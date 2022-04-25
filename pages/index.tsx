@@ -1,15 +1,16 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
+import { IStoreProvider } from 'interfaces/StoreInterface';
+import type { NextPage } from 'next'
+import { StoreContext } from 'providers/StoreProvider';
+import { useContext } from 'react';
 
-const IndexPage = () => (
-  <Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+const Home: NextPage = (): JSX.Element => {
+  const { stores, setActiveStore } = useContext<IStoreProvider>(StoreContext);
 
-export default IndexPage
+  return (
+    <div>
+      
+    </div>
+  );
+};
+
+export default Home;
